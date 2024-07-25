@@ -48,7 +48,7 @@ router.post("/login", async (req, res) => {
       res.send({ message: "Login Success", token: token });
     }
   } catch (err) {
-    res.send({ message: err });
+    res.send({ message: "Invalid Credentials" });
   }
 });
 module.exports = router;
