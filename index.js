@@ -4,10 +4,11 @@ const nodemon = require("nodemon");
 const deviceRouter = require("./routes/deviceRouter");
 const userRouter = require("./routes/userRouter");
 const dotenv = require("dotenv");
+const cors = require("cors");
 dotenv.config();
 
 const app = express();
-
+app.use(cors());
 app.use(express.json());
 app.use("/device", deviceRouter);
 app.use("/users", userRouter);

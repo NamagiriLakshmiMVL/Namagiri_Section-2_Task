@@ -9,7 +9,8 @@ const deviceSchema = mongoose.Schema(
     data: {
       temperature: { type: String, required: true },
       humidity: { type: String, required: true },
-      rainfall: { type: String, required: true },
+      pressure: { type: String, required: true },
+      altitude: { type: String, required: true },
     },
   },
   { timestamps: true }
