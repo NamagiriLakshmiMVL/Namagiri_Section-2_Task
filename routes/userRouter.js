@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const router = express.Router();
 
+// Getting All Users
 router.get("/allUsers", async (req, res) => {
   try {
     const data = await userModel.find();
@@ -14,6 +15,7 @@ router.get("/allUsers", async (req, res) => {
   }
 });
 
+//New User Login
 router.post("/signup", async (req, res) => {
   const { name, email, password } = req.body;
   const isUser = await userModel.findOne({ email: email });
@@ -33,6 +35,7 @@ router.post("/signup", async (req, res) => {
   res.send({ message: "User Created Successfully", token: token });
 });
 
+//Login a User
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
